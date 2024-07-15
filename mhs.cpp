@@ -10,7 +10,7 @@ struct Mahasiswa {
     string NIM;
     string nama;
     string jurusan;
-    float nilai;
+    float ipk;
 };
 
 
@@ -29,8 +29,8 @@ void tambahMahasiswa(vector<Mahasiswa>& dataMahasiswa) {
     getline(cin, mhs.NIM);
     cout << "Masukkan Jurusan Mahasiswa: ";
     getline(cin, mhs.jurusan);
-    cout << "Masukkan Nilai Mahasiswa: ";
-    cin >> mhs.nilai;
+    cout << "Masukkan IPK Mahasiswa: ";
+    cin >> mhs.ipk;
 
     dataMahasiswa.push_back(mhs);
     cout << "Data mahasiswa berhasil ditambahkan.\n";
@@ -48,7 +48,7 @@ void tampilkanMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
         cout << "Nama: " << mhs.nama << "\n";
         cout << "NIM: " << mhs.NIM << "\n";
         cout << "Jurusan: " << mhs.jurusan << "\n";
-        cout << "IPK: " << mhs.nilai << "\n";
+        cout << "IPK: " << mhs.ipk << "\n";
         cout << "--------------------------\n";
     }
 }
@@ -105,7 +105,7 @@ void cariMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
                 cout << "NIM: " << mhs.NIM << "\n";
                 cout << "Nama: " << mhs.nama << "\n";
                 cout << "Jurusan: " << mhs.jurusan << "\n";
-                cout << "Nilai: " << mhs.nilai << "\n";
+                cout << "IPK: " << mhs.nilai << "\n";
                 return;
             }
         }
@@ -119,7 +119,7 @@ void cariMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
                 cout << "NIM: " << mhs.NIM << "\n";
                 cout << "Nama: " << mhs.nama << "\n";
                 cout << "Jurusan: " << mhs.jurusan << "\n";
-                cout << "Nilai: " << mhs.nilai << "\n";
+                cout << "IPK: " << mhs.nilai << "\n";
                 return;
             }
         }
