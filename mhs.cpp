@@ -15,4 +15,5 @@ void clearScreen();
 void tambahMahasiswa(std::vector<Mahasiswa>& dataMahasiswa);
 void tampilkanMahasiswa(const std::vector<Mahasiswa>& dataMahasiswa);
 void hapusMahasiswa(std::vector<Mahasiswa>& dataMahasiswa, const std::string& NIM);
+void perbaruiMahasiswa(std::vector<Mahasiswa>& dataMahasiswa, const std::string& NIM);
 #endif // MAHASISWA_H
