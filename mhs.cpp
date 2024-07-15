@@ -1,10 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <conio.h> 
+#include <conio.h>
 
 using namespace std;
-
 
 struct Mahasiswa {
     string NIM;
@@ -13,18 +12,16 @@ struct Mahasiswa {
     float ipk;
 };
 
-
 void clearScreen() {
     system("cls");
 }
 
-
 void tambahMahasiswa(vector<Mahasiswa>& dataMahasiswa) {
     Mahasiswa mhs;
-    clearScreen(); 
+    clearScreen();
     cout << "Masukkan Nama Mahasiswa: ";
     cin >> mhs.nama;
-    cin.ignore(); 
+    cin.ignore();
     cout << "Masukkan NIM Mahasiswa: ";
     getline(cin, mhs.NIM);
     cout << "Masukkan Jurusan Mahasiswa: ";
@@ -36,9 +33,8 @@ void tambahMahasiswa(vector<Mahasiswa>& dataMahasiswa) {
     cout << "Data mahasiswa berhasil ditambahkan.\n";
 }
 
-
 void tampilkanMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
-    clearScreen(); 
+    clearScreen();
     if (dataMahasiswa.empty()) {
         cout << "Tidak ada data mahasiswa.\n";
         return;
@@ -53,9 +49,8 @@ void tampilkanMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
     }
 }
 
-
 void hapusMahasiswa(vector<Mahasiswa>& dataMahasiswa, const string& NIM) {
-    clearScreen(); 
+    clearScreen();
     auto it = dataMahasiswa.begin();
     while (it != dataMahasiswa.end()) {
         if (it->NIM == NIM) {
@@ -69,18 +64,17 @@ void hapusMahasiswa(vector<Mahasiswa>& dataMahasiswa, const string& NIM) {
     cout << "Data mahasiswa dengan NIM " << NIM << " tidak ditemukan.\n";
 }
 
-
 void perbaruiMahasiswa(vector<Mahasiswa>& dataMahasiswa, const string& NIM) {
-    clearScreen(); 
+    clearScreen();
     for (auto& mhs : dataMahasiswa) {
         if (mhs.NIM == NIM) {
             cout << "Masukkan Nama Baru Mahasiswa: ";
-            cin.ignore(); 
+            cin.ignore();
             getline(cin, mhs.nama);
             cout << "Masukkan Jurusan Baru Mahasiswa: ";
             getline(cin, mhs.jurusan);
-            cout << "Masukkan Nilai Baru Mahasiswa: ";
-            cin >> mhs.nilai;
+            cout << "Masukkan IPK Baru Mahasiswa: ";
+            cin >> mhs.ipk;
             cout << "Data mahasiswa dengan NIM " << NIM << " berhasil diperbarui.\n";
             return;
         }
@@ -88,9 +82,8 @@ void perbaruiMahasiswa(vector<Mahasiswa>& dataMahasiswa, const string& NIM) {
     cout << "Data mahasiswa dengan NIM " << NIM << " tidak ditemukan.\n";
 }
 
-
 void cariMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
-    clearScreen(); 
+    clearScreen();
     int pilihan;
     cout << "Cari berdasarkan:\n1. NIM\n2. Nama\nMasukkan pilihan: ";
     pilihan = _getch();
@@ -105,21 +98,21 @@ void cariMahasiswa(const vector<Mahasiswa>& dataMahasiswa) {
                 cout << "NIM: " << mhs.NIM << "\n";
                 cout << "Nama: " << mhs.nama << "\n";
                 cout << "Jurusan: " << mhs.jurusan << "\n";
-                cout << "IPK: " << mhs.nilai << "\n";
+                cout << "IPK: " << mhs.ipk << "\n";
                 return;
             }
         }
     } else if (pilihan == '2') {
         string nama;
         cout << "Masukkan Nama: ";
-        cin.ignore(); 
+        cin.ignore(); // Membersihkan newline character dari buffer input
         getline(cin, nama);
         for (const auto& mhs : dataMahasiswa) {
             if (mhs.nama == nama) {
                 cout << "NIM: " << mhs.NIM << "\n";
                 cout << "Nama: " << mhs.nama << "\n";
                 cout << "Jurusan: " << mhs.jurusan << "\n";
-                cout << "IPK: " << mhs.nilai << "\n";
+                cout << "IPK: " << mhs.ipk << "\n";
                 return;
             }
         }
@@ -133,7 +126,7 @@ int main() {
     vector<Mahasiswa> dataMahasiswa;
     int pilihan;
     do {
-        clearScreen(); 
+        clearScreen(); // Membersihkan layar setiap kali menu ditampilkan
         cout << "Menu:\n";
         cout << "1. Tambah Data Mahasiswa\n";
         cout << "2. Hapus Data Mahasiswa\n";
