@@ -13,4 +13,5 @@ struct Mahasiswa {
 
 void clearScreen();
 void tambahMahasiswa(std::vector<Mahasiswa>& dataMahasiswa);
+void tampilkanMahasiswa(const std::vector<Mahasiswa>& dataMahasiswa);
 #endif // MAHASISWA_H
