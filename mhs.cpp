@@ -10,4 +10,7 @@ struct Mahasiswa {
     std::string jurusan;
     float nilai;
 };
+
+void clearScreen();
+void tambahMahasiswa(std::vector<Mahasiswa>& dataMahasiswa);
 #endif // MAHASISWA_H
